@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ellevate Partners</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #006D77;
+            --secondary: #003B73;
+            --accent: #83C5BE;
+            --dark: #0A1C2B;
+            --light-bg: #F9FAFB;
+            --card-bg: #FFFFFF;
+            --text: #1F2937;
+            --text-light: #6B7280;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(180deg, var(--light-bg), #F3F7FA);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 20px 60px rgba(0,59,115,0.12);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 50px 50px 45px;
+            position: relative;
+            text-align: center;
+        }
+        
+        .logo {
+            width: 80px;
+            height: 80px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 16px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 32px;
+            backdrop-filter: blur(10px);
+            margin-bottom: 20px;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+        
+        .brand-name h1 {
+            font-size: 42px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 12px;
+        }
+        
+        .tagline {
+            font-size: 17px;
+            opacity: 0.95;
+            font-weight: 300;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .trust-bar {
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            margin-top: 25px;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            font-size: 14px;
+        }
+        
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .trust-item strong {
+            font-weight: 600;
+        }
+        
+        /* Problem Section */
+        .problem-section {
+            background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%);
+            padding: 40px 50px;
+            border-bottom: 4px solid #F59E0B;
+        }
+        
+        .problem-section h2 {
+            color: #92400E;
+            font-size: 26px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-align: center;
+        }
+        
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .problem-item {
+            background: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-left: 4px solid #F59E0B;
+        }
+        
+        .problem-item h3 {
+            color: #92400E;
+            font-size: 16px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .problem-item p {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+        
+        /* Solution Section */
+        .solution-section {
+            padding: 45px 50px;
+        }
+        
+        .solution-section h2 {
+            color: var(--secondary);
+            font-size: 28px;
+            margin-bottom: 15px;
+            font-weight: 700;
+            text-align: center;
+        }
+        
+        .solution-intro {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 40px;
+            font-size: 16px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+            margin-bottom: 30px;
+        }
+        
+        .service-card {
+            background: var(--light-bg);
+            padding: 28px;
+            border-radius: 14px;
+            transition: all 0.3s ease;
+            border-top: 3px solid transparent;
+        }
+        
+        .service-card:hover {
+            border-top-color: var(--primary);
+            box-shadow: 0 10px 25px rgba(0,109,119,0.15);
+            transform: translateY(-4px);
+        }
+        
+        .service-icon {
+            font-size: 32px;
+            margin-bottom: 14px;
+        }
+        
+        .service-card h3 {
+            color: var(--secondary);
+            font-size: 18px;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        
+        .service-card p {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        
+        .service-card ul {
+            margin-top: 10px;
+            padding-left: 20px;
+            font-size: 13px;
+            color: var(--text-light);
+        }
+        
+        .service-card li {
+            margin-bottom: 5px;
+        }
+        
+        /* Expertise Section */
+        .expertise-section {
+            background: var(--light-bg);
+            padding: 40px 50px;
+            border-top: 1px solid #E5E7EB;
+            border-bottom: 1px solid #E5E7EB;
+        }
+        
+        .expertise-section h2 {
+            color: var(--secondary);
+            font-size: 24px;
+            margin-bottom: 30px;
+            font-weight: 700;
+            text-align: center;
+        }
+        
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+        
+        .expertise-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            text-align: center;
+        }
+        
+        .expertise-number {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+        
+        .expertise-label {
+            font-size: 14px;
+            color: var(--text);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .expertise-detail {
+            font-size: 13px;
+            color: var(--text-light);
+        }
+        
+        /* Value Section */
+        .value-section {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 40px 50px;
+            color: white;
+        }
+        
+        .value-section h2 {
+            font-size: 24px;
+            margin-bottom: 30px;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .value-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .value-item {
+            background: rgba(255,255,255,0.12);
+            padding: 16px 28px;
+            border-radius: 30px;
+            font-size: 14px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            font-weight: 500;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: var(--card-bg);
+            padding: 45px 50px;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            color: var(--secondary);
+            font-size: 28px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .cta-section p {
+            color: var(--text-light);
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+        
+        .contact-grid {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .contact-item {
+            text-align: center;
+        }
+        
+        .contact-item .label {
+            color: var(--primary);
+            font-size: 12px;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+        
+        .contact-item .value {
+            color: var(--secondary);
+            font-size: 17px;
+            font-weight: 600;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0,109,119,0.25);
+            font-size: 16px;
+        }
+        
+        .cta-button:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,59,115,0.35);
+        }
+        
+        .guarantee {
+            margin-top: 30px;
+            padding: 22px;
+            background: var(--light-bg);
+            border-radius: 10px;
+            font-size: 14px;
+            color: var(--text-light);
+            font-style: italic;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            color: rgba(255,255,255,0.8);
+            padding: 30px 50px;
+            text-align: center;
+            font-size: 13px;
+        }
+        
+        footer p {
+            margin-bottom: 8px;
+        }
+        
+        @media print {
+            body {
+                padding: 0;
+                background: white;
+            }
+            .container {
+                box-shadow: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .problems-grid,
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .expertise-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header,
+            .problem-section,
+            .solution-section,
+            .expertise-section,
+            .value-section,
+            .cta-section {
+                padding: 30px 25px;
+            }
+            
+            .brand-name h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">EP</div>
+            <div class="brand-name">
+                <h1>ELLEVATE PARTNERS</h1>
+                <p class="tagline">Strategic Business Concierge — Elevating Your Business to New Heights</p>
+            </div>
+            <div class="trust-bar">
+                <div class="trust-item">
+                    <span>⭐</span>
+                    <span><strong>14 ans</strong> d'expertise</span>
+                </div>
+                <div class="trust-item">
+                    <span>🌍</span>
+                    <span><strong>Expertise Europe-Afrique</strong></span>
+                </div>
+                <div class="trust-item">
+                    <span>🏢</span>
+                    <span><strong>Multinationales</strong></span>
+                </div>
+                <div class="trust-item">
+                    <span>🎯</span>
+                    <span><strong>Résultats prouvés</strong></span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Problem Section -->
+        <div class="problem-section">
+            <h2>⚠️ Les Défis Que Nous Résolvons</h2>
+            <div class="problems-grid">
+                <div class="problem-item">
+                    <h3>📉 Trésorerie sous tension</h3>
+                    <p>Liquidités qui s'évaporent, retards de paiement, navigation à vue sans visibilité claire sur le cash-flow.</p>
+                </div>
+                
+                <div class="problem-item">
+                    <h3>🌍 Expansion internationale risquée</h3>
+                    <p>Conquérir de nouveaux marchés sans maîtriser les réglementations locales ni avoir de partenaires fiables.</p>
+                </div>
+                
+                <div class="problem-item">
+                    <h3>⚙️ Processus inefficaces</h3>
+                    <p>Équipes qui perdent un temps précieux sur des tâches manuelles. Productivité en baisse, coûts qui explosent.</p>
+                </div>
+                
+                <div class="problem-item">
+                    <h3>📊 Décisions sans données fiables</h3>
+                    <p>Absence de reporting précis pour prendre des décisions stratégiques éclairées. Opportunités qui échappent.</p>
+                </div>
+                
+                <div class="problem-item">
+                    <h3>🔍 Conformité et audit stressants</h3>
+                    <p>Exigences réglementaires en évolution constante. Audits qui approchent sans certitude de conformité.</p>
+                </div>
+                
+                <div class="problem-item">
+                    <h3>🎯 Croissance bloquée</h3>
+                    <p>Entreprise qui stagne sans expertise stratégique pour identifier et activer les vrais leviers de croissance.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Solution Section -->
+        <div class="solution-section">
+            <h2>✨ Nos Solutions Stratégiques</h2>
+            <p class="solution-intro">Une expertise internationale au service de votre croissance durable</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">💰</div>
+                    <h3>Pilotage Financier & Trésorerie</h3>
+                    <p>Redressement de votre situation financière :</p>
+                    <ul>
+                        <li>Optimisation du cash-flow et prévisions fiables</li>
+                        <li>Restructuration de la dette et recapitalisation</li>
+                        <li>Réduction des délais de paiement de 30%+</li>
+                        <li>Tableaux de bord stratégiques en temps réel</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🌐</div>
+                    <h3>Expansion Internationale Sécurisée</h3>
+                    <p>Ouverture des marchés étrangers :</p>
+                    <ul>
+                        <li>Navigation réglementaire (UK, UE, Afrique)</li>
+                        <li>Identification de partenaires fiables</li>
+                        <li>Due diligence approfondie</li>
+                        <li>Structuration fiscale optimale</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">⚡</div>
+                    <h3>Automatisation & Efficacité</h3>
+                    <p>Modernisation de vos opérations :</p>
+                    <ul>
+                        <li>Digitalisation des processus comptables</li>
+                        <li>Réduction du temps de clôture mensuelle</li>
+                        <li>Élimination des tâches manuelles répétitives</li>
+                        <li>Formation des équipes aux nouveaux outils</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">📈</div>
+                    <h3>Stratégie & Analyse Décisionnelle</h3>
+                    <p>Transformation de vos données en actions :</p>
+                    <ul>
+                        <li>Modélisation financière & scénarios</li>
+                        <li>Analyse de rentabilité par activité</li>
+                        <li>Identification d'opportunités de croissance</li>
+                        <li>Business cases pour investissements</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">✅</div>
+                    <h3>Conformité & Gouvernance</h3>
+                    <p>Sécurisation de votre conformité :</p>
+                    <ul>
+                        <li>Préparation et pilotage des audits</li>
+                        <li>Mise en conformité réglementaire</li>
+                        <li>Amélioration des contrôles internes</li>
+                        <li>Interface avec administrations fiscales</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🚀</div>
+                    <h3>Gestion de Projets Stratégiques</h3>
+                    <p>Pilotage de vos transformations :</p>
+                    <ul>
+                        <li>Restructuration d'équipes et processus</li>
+                        <li>Projets IT et systèmes d'information</li>
+                        <li>Coordination multi-stakeholders</li>
+                        <li>Exécution rigoureuse dans les délais</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Expertise Section -->
+        <div class="expertise-section">
+            <h2>Notre Expertise en Chiffres</h2>
+            <div class="expertise-grid">
+                <div class="expertise-card">
+                    <div class="expertise-number">14</div>
+                    <div class="expertise-label">Années d'expérience</div>
+                    <div class="expertise-detail">Finance stratégique internationale</div>
+                </div>
+                
+                <div class="expertise-card">
+                    <div class="expertise-number">3</div>
+                    <div class="expertise-label">Continents</div>
+                    <div class="expertise-detail">Europe, Afrique, Amérique</div>
+                </div>
+                
+                <div class="expertise-card">
+                    <div class="expertise-number">30%</div>
+                    <div class="expertise-label">Réduction moyenne</div>
+                    <div class="expertise-detail">Dette clients & délais paiement</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Value Section -->
+        <div class="value-section">
+            <h2>Pourquoi Ellevate Partners ?</h2>
+            <div class="value-grid">
+                <div class="value-item">Expertise multinationales</div>
+                <div class="value-item">Approche internationale</div>
+                <div class="value-item">Bilingue FR/EN</div>
+                <div class="value-item">Multi-secteurs</div>
+                <div class="value-item">Résultats mesurables</div>
+                <div class="value-item">Solutions sur-mesure</div>
+            </div>
+        </div>
+        
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <h2>Prêt à Transformer Votre Business ?</h2>
+            <p>Discutons de vos défis et explorons ensemble les solutions adaptées à vos objectifs.</p>
+            
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="label">Email</div>
+                    <div class="value">aidaboukaroum@gmail.com</div>
+                </div>
+                <div class="contact-item">
+                    <div class="label">Téléphone</div>
+                    <div class="value">+221 76 194 11 23</div>
+                </div>
+            </div>
+            
+            <a href="mailto:aidaboukaroum@gmail.com" class="cta-button">Réserver un Diagnostic Gratuit</a>
+            
+            <div class="guarantee">
+                🎁 <strong>Premier rendez-vous offert</strong> : 30 minutes pour analyser vos défis et identifier des solutions concrètes. Sans engagement.
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <footer>
+            <p><strong>Ellevate Partners</strong> — Strategic Business Concierge</p>
+            <p>Dakar, Sénégal • Services internationaux • Bilingue FR/EN</p>
+        </footer>
+    </div>
+</body>
+</html>
